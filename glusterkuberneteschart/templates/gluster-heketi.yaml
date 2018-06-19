@@ -1,0 +1,30 @@
+#
+# This deployment from https://github.com/lenartj/gluster-kubernetes/blob/master/deploy/kube-templates/heketi-turnkey.yaml
+# It expects a ConfigMap created.
+# There is an example in gluster-heketi-config.yaml
+#
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gluster-heketi
+spec:
+  restartPolicy: Never
+  containers:
+  - name: gk-deploy
+    image: {{ .Values.image.gluster}}
+    imagePullPolicy: {{ .Values.image.pullPolicy }}
+    command:
+    - /opt/gk-deploy/gk-deploy
+    - --cli=kubectl
+    - --api-server={{ .Values.kubectl.apiserver}}
+    - --deploy-gluster
+    - --wait=600
+    - --yes
+    - /opt/config/topology.json
+    volumeMounts:
+    - name: config
+      mountPath: /opt/config
+  volumes:
+  - name: config
+    configMap:
+      name: gluster-heketi-config

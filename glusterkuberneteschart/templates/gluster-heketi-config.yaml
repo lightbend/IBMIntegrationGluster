@@ -1,0 +1,15 @@
+# $ kubectl create configmap gluster-heketi-config --from-file=topology.json --output=yaml --dry-run=true
+# Remove --dry-run=true if you actually want to create the object.
+#
+# For proper function your nodes must have the dm_thin_pool module loaded
+# and glusterfs-client installed
+# $ modprobe dm_thin_pool
+# $ echo "dm_thin_pool" >>/etc/modules
+# $ apt-get install glusterfs-client
+#
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gluster-heketi-config
+data:
+  topology.json: '{{ .Values.topology.definition }}'

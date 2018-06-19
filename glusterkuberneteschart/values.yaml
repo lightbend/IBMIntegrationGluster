@@ -1,0 +1,71 @@
+# Default values for gluster on kubernetes install.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# docker images
+image:
+  gluster: lightbend/gluster_heketi
+  pullPolicy: Always
+# Kubectl
+kubectl:
+  apiserver: kube-apiserver-0-instance.kubernetes.mesos
+
+# Gluster topology
+topology:
+  definition: >
+    {
+      "clusters": [
+        {
+          "nodes": [
+            {
+              "node": {
+                "hostnames": {
+                  "manage": [
+                    "ip-10-0-6-134.ec2.internal"
+                  ],
+                  "storage": [
+                    "10.0.6.134"
+                  ]
+                },
+                "zone": 1
+              },
+              "devices": [
+                "/dev/xvdi"
+              ]
+            },
+            {
+              "node": {
+                "hostnames": {
+                  "manage": [
+                    "ip-10-0-13-237.ec2.internal"
+                  ],
+                  "storage": [
+                    "10.0.13.237"
+                  ]
+                },
+                "zone": 1
+              },
+              "devices": [
+                "/dev/xvdi"
+              ]
+            },
+            {
+              "node": {
+                "hostnames": {
+                  "manage": [
+                    "ip-10-0-15-137.ec2.internal"
+                  ],
+                  "storage": [
+                    "10.0.15.137"
+                  ]
+                },
+                "zone": 1
+              },
+              "devices": [
+                "/dev/xvdi"
+              ]
+            }
+          ]
+        }
+      ]
+    }

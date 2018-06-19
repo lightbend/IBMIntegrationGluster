@@ -1,0 +1,56 @@
+{
+  "clusters": [
+    {
+      "nodes": [
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "kube-node-0-kubelet.kubernetes.mesos"
+              ],
+              "storage": [
+                "10.0.12.97"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/xvdi"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "kube-node-1-kubelet.kubernetes.mesos"
+              ],
+              "storage": [
+                "10.0.6.133"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/xvdi"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "kube-node-2-kubelet.kubernetes.mesos"
+              ],
+              "storage": [
+                "10.0.8.209"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/xvdi"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "clusters": [
+    {
+      "nodes": [
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "ip-10-0-12-110.us-west-2.compute.internal"
+              ],
+              "storage": [
+                "10.0.12.110"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/xvdi"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "ip-10-0-13-147.us-west-2.compute.internal"
+              ],
+              "storage": [
+                "10.0.13.147"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/xvdi"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "ip-10-0-12-57.us-west-2.compute.internal"
+              ],
+              "storage": [
+                "10.0.12.57"
+              ]
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/xvdi"
+          ]
+        }
+      ]
+    }
+  ]
+}

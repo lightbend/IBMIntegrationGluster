@@ -1,0 +1,38 @@
+image:
+  __metadata:
+    label: "Information about gluster install image"
+  gluster:
+    __metadata:
+      label: "Name of the dockerImage"
+      description: "Name of the docker image for the gluster installerimage "
+      type: "string"
+      required: true
+  pullPolicy:
+    __metadata:
+      label: "Pull policy for an image"
+      description: "Pulll policy for an image"
+      type: "string"
+      required: true
+      options:
+      - label: "Always"
+        value: "Always"
+      - label: "IfNotPresent"
+        value: "IfNotPresent"
+
+kubectl:
+  __metadata:
+    label: "Information for kubectl configuration"
+  apiserver:
+    __metadata:
+      label: "IP address for the API server"
+      description: "This is a host name for the K8 API server. Typically the IP address of the kube-apiserver-0-instance is used here. The default is the DC/OS virtual IP"
+      required: true
+topology:
+  __metadata:
+    label: "Information about gluster topology"
+  definition:
+    __metadata:
+      label: "Gluster Cluster topology"
+      description: "This is a json string representing gluster cluster configuration. For every node in the cluster it specifies node name (as it appears in the kubectl get nodes), IP address and the name of the disk used by gluster. Currently, you need to update it outside of manager and paste the file as a string"
+      type: "string"
+      required: true
