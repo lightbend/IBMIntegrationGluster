@@ -14,58 +14,58 @@ kubectl:
 topology:
   definition: >
     {
-      "clusters": [
+    "clusters": [
+      {
+      "nodes": [
         {
-          "nodes": [
-            {
-              "node": {
-                "hostnames": {
-                  "manage": [
-                    "ip-10-0-6-134.ec2.internal"
-                  ],
-                  "storage": [
-                    "10.0.6.134"
-                  ]
-                },
-                "zone": 1
-              },
-              "devices": [
-                "/dev/xvdi"
+          "node": {
+            "hostnames": {
+              "manage": [
+                "<node-1-name>"
+              ],
+              "storage": [
+                "<node-1-ip>"
               ]
             },
-            {
-              "node": {
-                "hostnames": {
-                  "manage": [
-                    "ip-10-0-13-237.ec2.internal"
-                  ],
-                  "storage": [
-                    "10.0.13.237"
-                  ]
-                },
-                "zone": 1
-              },
-              "devices": [
-                "/dev/xvdi"
+            "zone": 1
+          },
+          "devices": [
+            "/dev/<node-1-disk>"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "<node-2-name>"
+              ],
+              "storage": [
+                "<node-2-ip>"
               ]
             },
-            {
-              "node": {
-                "hostnames": {
-                  "manage": [
-                    "ip-10-0-15-137.ec2.internal"
-                  ],
-                  "storage": [
-                    "10.0.15.137"
-                  ]
-                },
-                "zone": 1
-              },
-              "devices": [
-                "/dev/xvdi"
+            "zone": 1
+          },
+          "devices": [
+            "/dev/<node-2-disk>"
+          ]
+        },
+        {
+          "node": {
+            "hostnames": {
+              "manage": [
+                "<node-3-name>"
+              ],
+              "storage": [
+                "<node-3-ip>"
               ]
-            }
+            },
+            "zone": 1
+          },
+          "devices": [
+            "/dev/<node-3-disk>"
           ]
         }
       ]
+    }
+    ]
     }
